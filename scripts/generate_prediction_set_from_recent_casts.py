@@ -3,8 +3,7 @@ from datasets import Dataset
 from transformers import pipeline
 
 with open("data/recent_casts.json", "r") as f:
-    raw_data = json.loads(f.readlines()[0])
-    casts = raw_data["result"]["casts"]
+    casts = json.loads(f.readlines()[0])
     text_data = [cast["text"] for cast in casts]
 
     sentiment_classifier = pipeline("sentiment-analysis")
