@@ -3,7 +3,7 @@ from datasets import Dataset
 from transformers import pipeline
 
 with open("data/recent_casts.json", "r") as f:
-    casts = json.loads(f.readlines()[0])
+    casts = json.loads(f.readlines().pop())
     text_data = [cast["text"] for cast in casts]
 
     sentiment_classifier = pipeline("sentiment-analysis")
@@ -19,5 +19,4 @@ with open("data/recent_casts.json", "r") as f:
         predictions["score"].append(score)
 
     pred_set = Dataset.from_dict(predictions)
-    pred_set.set_format(type="numpy")
-    pred_set.export(filename="data/pretrained-prediction-set.tfrecord")
+    pred_set.to_csv(path_or_buf="data/prediction-set.csv")

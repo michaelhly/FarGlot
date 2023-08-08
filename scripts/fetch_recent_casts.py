@@ -9,6 +9,9 @@ HTTP_HEADERS = {
     "Authorization": f"Bearer {API_SECRET}"
 }
 
+if not API_SECRET:
+    raise Exception("MERKLE_SECRET not set")
+
 with open("data/recent_casts.json", "w+") as f:
     all_casts = []
     cursor = None
