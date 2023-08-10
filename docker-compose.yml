@@ -1,0 +1,35 @@
+version: '3.9'
+
+services:
+  hubble:
+    image: farcasterxyz/hubble:latest
+    user: root
+    ports:
+      - '2282:2282'
+      - '2283:2283'
+    volumes:
+      - hub_identity_data:/home/node/app/apps/hubble/.hub
+      - type: bind
+        source: ./.farcaster/.rocks
+        target: /home/node/app/apps/hubble/.rocks
+    command: 
+      [
+        "node", 
+        "build/cli.js", 
+        "start",
+        "--gossip-port",
+        "2282",
+        "--rpc-port",
+        "2283",
+        "--eth-rpc-url",
+        "https://eth-goerli.g.alchemy.com/v2/IvjMoCKt1hT66f9OJoL_dMXypnvQYUdd",
+        "--eth-mainnet-rpc-url",
+        "https://eth-mainnet.g.alchemy.com/v2/8cz__IXnQ5FK_GNYDlfooLzYhBAW7ta0",
+        "--network",
+        "3",
+        "--allowed-peers",
+        "none"
+      ]
+
+volumes:
+  hub_identity_data:
