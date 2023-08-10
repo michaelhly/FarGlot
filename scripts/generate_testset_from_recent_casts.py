@@ -9,14 +9,14 @@ with open("data/recent_casts.json", "r") as f:
     sentiment_classifier = pipeline("sentiment-analysis")
     sentiments = sentiment_classifier(text_data)
 
-    predictions = {"hash": [], "text": [], "label": [], "score": [] }
+    predictions = { "hash": [], "text": [], "label": [], "score": [] }
     for cast, sentiment in zip(casts, sentiments):
         predictions["hash"].append(cast["hash"])
         predictions["text"].append(cast["text"])
 
         predictions["label"].append(sentiment["label"])
-        score = 1.0 if sentiment["label"] == "POSITIVE" else 0.0
+        score = 1.0 if sentiment["label"] == "POSITIVE" else -1.0
         predictions["score"].append(score)
 
-    pred_set = Dataset.from_dict(predictions)
-    pred_set.to_csv(path_or_buf="data/prediction-set.csv")
+    test_set = Dataset.from_dict(predictions)
+    test_set.to_csv(path_or_buf="data/test-set.csv")
