@@ -13,7 +13,7 @@ it.seek_to_first()
 with open("data/data-set.csv", "w") as f:
     writer = csv.writer(f)
     writer.writerow(["hash","text","label","score"])
-    for serialized in list(it)[:1000]:
+    for serialized in it:
         try:
             m = Message()
             m.ParseFromString(serialized)
