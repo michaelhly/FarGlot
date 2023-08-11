@@ -2,7 +2,7 @@ import os
 import json
 import requests
 
-CAST_BATCHES = 2
+CAST_BATCHES = 1
 OUT_PATH = ""
 API_SECRET = os.getenv("MERKLE_SECRET")
 HTTP_HEADERS = {
@@ -12,7 +12,7 @@ HTTP_HEADERS = {
 if not API_SECRET:
     raise Exception("MERKLE_SECRET not set")
 
-with open("data/recent_casts.json", "w+") as f:
+with open("data/recent-casts.json", "w+") as f:
     all_casts = []
     cursor = None
     for i in range(CAST_BATCHES):

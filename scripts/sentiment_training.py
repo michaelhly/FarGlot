@@ -8,7 +8,7 @@ dataset = load_dataset(
     "csv",
     data_files={
         'test': 'data/test-set.csv',
-        'train': "data/data-set.csv"
+        'train': "data/training-set.csv"
     })
 
 ### PREPROCESSING ###

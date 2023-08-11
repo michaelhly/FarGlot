@@ -2,7 +2,7 @@ import json
 from datasets import Dataset
 from transformers import pipeline
 
-with open("data/recent_casts.json", "r") as f:
+with open("data/recent-casts.json", "r") as f:
     casts = json.loads(f.readlines().pop())
     text_data = [cast["text"] for cast in casts]
 
