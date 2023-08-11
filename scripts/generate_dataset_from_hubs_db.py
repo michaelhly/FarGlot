@@ -1,7 +1,7 @@
 import csv
 import rocksdb
 
-from src.farcaster.generated.message_pb2 import Message, MessageData, MessageType
+from src.farcaster.generated.message_pb2 import Message
 
 HUBS_ROCKS_DB_PATH=""
 HUBS_ROCKS_DB_NAME="rocks.hub._default"

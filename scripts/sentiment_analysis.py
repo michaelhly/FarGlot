@@ -1,5 +1,8 @@
-from datasets import load_dataset, Features,Value
+from datasets import load_dataset
 
-context_feat = Features({'text': Value(dtype='string', id=None)})
-test_set = load_dataset("csv", data_files=['data/test-set.csv'])
-print(test_set["train"][0])
+data_set = load_dataset(
+    "csv",
+    data_files={
+        'test': 'data/test-set.csv',
+        'train': "data/data-set.csv"
+    })
