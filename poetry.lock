@@ -346,6 +346,18 @@ lint = ["black (>=23)", "flake8 (==3.8.3)", "isort (>=5.11.0)", "mypy (==0.971)"
 test = ["hypothesis (>=4.43.0)", "mypy (==0.971)", "pytest (>=7.0.0)", "pytest-xdist (>=2.4.0)", "types-setuptools"]
 
 [[package]]
+name = "faust-streaming-rocksdb"
+version = "0.9.2"
+description = "Python bindings for RocksDB, primarily for use with Faust"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[package.extras]
+doc = ["sphinx", "sphinx-rtd-theme"]
+test = ["pytest"]
+
+[[package]]
 name = "filelock"
 version = "3.12.2"
 description = "A platform independent file lock."
@@ -1312,7 +1324,7 @@ testing = ["big-o", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9, <3.11"
-content-hash = "9afd67d3390a691c7907b03b733581668e12aae53f6abb1af70539536a8354fc"
+content-hash = "6c93a7491148e9d80ada5ef4754a57ce49aca746e59520be07150e044d4092ad"
 
 [metadata.files]
 absl-py = [
@@ -1844,6 +1856,15 @@ eth-typing = [
 eth-utils = [
     {file = "eth-utils-2.2.0.tar.gz", hash = "sha256:7f1a9e10400ee332432a778c321f446abaedb8f538df550e7c9964f446f7e265"},
     {file = "eth_utils-2.2.0-py3-none-any.whl", hash = "sha256:d6e107d522f83adff31237a95bdcc329ac0819a3ac698fe43c8a56fd80813eab"},
+]
+faust-streaming-rocksdb = [
+    {file = "faust-streaming-rocksdb-0.9.2.tar.gz", hash = "sha256:14583ebc68c8c485509e80cbd2d61da2f52445254697a4f17102d901c9cc7b2b"},
+    {file = "faust_streaming_rocksdb-0.9.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:1b02a4f7003ff2c6e2284be4c957d9c3d60dd18df0a06add43b7ea629c2113df"},
+    {file = "faust_streaming_rocksdb-0.9.2-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:516f02b0afc3dfb84c90066c0d02c13d4a254c4c2a7920b8eaaeec7b086c7ee3"},
+    {file = "faust_streaming_rocksdb-0.9.2-cp36-cp36m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:3194679835cdf460dae50b0c2c6f6fb65c968bb4a4e1c3101a7b294793f9f0f0"},
+    {file = "faust_streaming_rocksdb-0.9.2-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:49b980e742fe21c28ed13f566cb106883cd9d1b4dd20eaa84c84616ab029af6b"},
+    {file = "faust_streaming_rocksdb-0.9.2-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:fd2630eaa8cd94e61325fabff490d10a827dc5cd899878a4ca931c3f88a544b9"},
+    {file = "faust_streaming_rocksdb-0.9.2-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:149b29dffe2ec833dfad1c3a27b829856eeab2971a13e9989b6f7cf8654c7292"},
 ]
 filelock = [
     {file = "filelock-3.12.2-py3-none-any.whl", hash = "sha256:cbb791cdea2a72f23da6ac5b5269ab0a0d161e9ef0100e653b69049a7706d1ec"},
