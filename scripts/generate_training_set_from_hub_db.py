@@ -17,7 +17,7 @@ with open("data/training-set.csv", "w") as f:
         try:
             m = Message()
             m.ParseFromString(serialized)
-            if m.data.cast_add_body:
+            if m.data.cast_add_body.text:
                 hash = f"0x{m.hash.hex()}"
                 text = m.data.cast_add_body.text
                 writer.writerow([hash, text, "NEUTRAL", 0.0])
