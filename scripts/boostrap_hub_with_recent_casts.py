@@ -4,7 +4,7 @@ import requests
 from eth_account import Account
 
 from src.farcaster.builders import make_cast_add, make_signer_add 
-from src.farcaster.generated.message_pb2 import CastAddBody, MessageData
+from src.farcaster.generated.message_pb2 import CastAddBody, FarcasterNetwork, MessageData
 from src.farcaster.client import get_insecure_client
 from src.farcaster.signers import EIP712Signer, Ed25519Signer
 from src.farcaster.time import get_farcaster_time
@@ -13,7 +13,7 @@ CAST_BATCHES = 1
 # FARCASTER CONFIGS
 FARCASTER_ID=os.getenv("FARCASTER_ID")
 FARCASTER_MNEMONIC = os.getenv("FARCASTER_MNEMONIC")
-FARCASTER_NETWORK = 3
+FARCASTER_NETWORK_ID = 3
 HUB_ADDRESS="localhost:2283"
 # WARPCAST CONFIGS
 API_SECRET = os.getenv("MERKLE_SECRET")
@@ -45,8 +45,8 @@ signer=EIP712Signer(eth_account)
 signer_add = Ed25519Signer.generate()
 
 message_data = MessageData(
-   fid=FARCASTER_ID,
-   network=FARCASTER_NETWORK,
+   fid=int(FARCASTER_ID),
+   network=FarcasterNetwork.Name(FARCASTER_NETWORK_ID),
    timestamp=get_farcaster_time()
 )
 
