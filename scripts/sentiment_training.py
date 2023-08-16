@@ -20,7 +20,7 @@ dataset = load_dataset(
 tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
 def preprocess_function(batch):
    tokenized_batch = tokenizer(batch["text"], padding=True, truncation=True, max_length=128)
-   tokenized_batch["label"] = [label2score[label] for label in batch["label"]]
+   tokenized_batch["labels"] = [label2score[label] for label in batch["labels"]]
    return tokenized_batch
 
 train_dataset = dataset["train"]

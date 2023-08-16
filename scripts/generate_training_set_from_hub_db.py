@@ -12,7 +12,7 @@ it.seek_to_first()
 
 with open("data/training-set.csv", "w") as f:
     writer = csv.writer(f)
-    writer.writerow(["hash","text","label","score"])
+    writer.writerow(["hash","text","labels"])
     for serialized in it:
         try:
             m = Message()
@@ -20,6 +20,6 @@ with open("data/training-set.csv", "w") as f:
             if m.data.cast_add_body.text:
                 hash = f"0x{m.hash.hex()}"
                 text = m.data.cast_add_body.text
-                writer.writerow([hash, text, "NEUTRAL", 0.0])
+                writer.writerow([hash, text, "NEUTRAL"])
         except:
             print("skpping non message type")
