@@ -1,3 +1,4 @@
+import os
 import numpy as np
 from datasets import load_dataset, load_metric
 from transformers import AutoModelForSequenceClassification, AutoTokenizer, DataCollatorWithPadding, TrainingArguments, Trainer
@@ -10,6 +11,15 @@ dataset = load_dataset(
         'test': 'data/test-set.csv',
         'train': "data/training-set.csv"
     })
+
+# set the wandb project where this run will be logged
+os.environ["WANDB_PROJECT"] = "sentiment-training"
+# save your trained model checkpoint to wandb
+os.environ["WANDB_LOG_MODEL"] = "true"
+# turn off watch to log faster
+os.environ["WANDB_WATCH"] = "false"
+# wandb base url
+os.environ["WANDB_BASE_URL"] = "http://localhost:8080"
 
 ### PREPROCESSING ###
 
@@ -38,7 +48,15 @@ def compute_metrics(eval_pred):
 model = AutoModelForSequenceClassification.from_pretrained("distilbert-base-uncased", num_labels=2)
 training_args = TrainingArguments(
    output_dir=OUT_DIR,
+   report_to="wandb",
    learning_rate=2e-5,
+   logging_steps=5,
+   per_device_train_batch_size=32,
+   per_device_eval_batch_size=32,
+   evaluation_strategy="steps",
+   eval_steps=20,
+   max_steps=100,
+   save_steps=100,
    per_device_train_batch_size=16,
    per_device_eval_batch_size=16,
    num_train_epochs=2,
@@ -55,6 +73,8 @@ trainer = Trainer(
    data_collator=DataCollatorWithPadding(tokenizer=tokenizer),
    compute_metrics=compute_metrics,
 )
+
+
 trainer.train()
 
 ### POST TRAINING ###
