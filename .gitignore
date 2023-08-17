@@ -1,3 +1,4 @@
 data/
 wandb/
 .farcaster/.rocks
+.ipynb_checkpoints/
