@@ -11,9 +11,11 @@ with open("data/recent-casts.json", "r") as f:
 
     predictions = {"hash": [], "text": [], "labels": []}
     for cast, sentiment in zip(casts, sentiments):
+        if not cast["text"]:
+            continue
+
         predictions["hash"].append(cast["hash"])
         predictions["text"].append(cast["text"])
-
         predictions["labels"].append(sentiment["label"])
 
     test_set = Dataset.from_dict(predictions)
