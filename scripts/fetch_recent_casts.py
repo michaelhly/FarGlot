@@ -5,9 +5,7 @@ import requests
 CAST_BATCHES = 1
 OUT_PATH = ""
 API_SECRET = os.getenv("MERKLE_SECRET")
-HTTP_HEADERS = {
-    "Authorization": f"Bearer {API_SECRET}"
-}
+HTTP_HEADERS = {"Authorization": f"Bearer {API_SECRET}"}
 
 if not API_SECRET:
     raise Exception("MERKLE_SECRET not set")
@@ -30,4 +28,3 @@ with open("data/recent-casts.json", "w+") as f:
         out.write(json.dumps(all_casts))
     else:
         f.write(json.dumps(all_casts))
-    

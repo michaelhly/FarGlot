@@ -36,6 +36,7 @@ def make_signer_add(
         signer,
     )
 
+
 def make_cast_add(data: MessageData, signer: Signer, cast_add: CastAddBody) -> Message:
     # Create a new MessageData object and copy the provided data
     message_data = MessageData()

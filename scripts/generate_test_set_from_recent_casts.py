@@ -9,7 +9,7 @@ with open("data/recent-casts.json", "r") as f:
     sentiment_classifier = pipeline("sentiment-analysis")
     sentiments = sentiment_classifier(text_data)
 
-    predictions = { "hash": [], "text": [], "labels": [] }
+    predictions = {"hash": [], "text": [], "labels": []}
     for cast, sentiment in zip(casts, sentiments):
         predictions["hash"].append(cast["hash"])
         predictions["text"].append(cast["text"])

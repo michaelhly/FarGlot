@@ -1,11 +1,12 @@
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Optional, Tuple
 from transformers import (
     AutoModelForPreTraining,
     AutoTokenizer,
     PretrainedConfig,
     PreTrainedModel,
-    PreTrainedTokenizerBase
+    PreTrainedTokenizerBase,
 )
+
 
 def load_model_and_tokenizer(
     base_model: str,
@@ -14,13 +15,9 @@ def load_model_and_tokenizer(
     config: Optional[PretrainedConfig] = None,
     **kwargs
 ) -> Tuple[PreTrainedModel, PreTrainedTokenizerBase]:
-    model = auto_model_class.from_pretrained(
-        base_model,
-        config=config,
-        **kwargs
-    )
+    model = auto_model_class.from_pretrained(base_model, config=config, **kwargs)
 
     tokenizer = AutoTokenizer.from_pretrained(base_model, config=config, **kwargs)
-    tokenizer.model_max_length=max_length
+    tokenizer.model_max_length = max_length
 
     return model, tokenizer
