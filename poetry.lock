@@ -434,39 +434,6 @@ lint = ["black (>=23)", "flake8 (==3.8.3)", "isort (>=5.11.0)", "mypy (==0.971)"
 test = ["hypothesis (>=4.43.0)", "mypy (==0.971)", "pytest (>=7.0.0)", "pytest-xdist (>=2.4.0)", "types-setuptools"]
 
 [[package]]
-name = "evaluate"
-version = "0.4.0"
-description = "HuggingFace community-driven open-source library of evaluation"
-category = "dev"
-optional = false
-python-versions = ">=3.7.0"
-
-[package.dependencies]
-datasets = ">=2.0.0"
-dill = "*"
-fsspec = {version = ">=2021.05.0", extras = ["http"]}
-huggingface-hub = ">=0.7.0"
-multiprocess = "*"
-numpy = ">=1.17"
-packaging = "*"
-pandas = "*"
-requests = ">=2.19.0"
-responses = "<0.19"
-tqdm = ">=4.62.1"
-xxhash = "*"
-
-[package.extras]
-dev = ["Werkzeug (>=1.0.1)", "absl-py", "bert-score (>=0.3.6)", "black (>=22.0,<23.0)", "cer (>=1.2.0)", "charcut (>=1.1.1)", "flake8 (>=3.8.3)", "isort (>=5.0.0)", "jiwer", "mauve-text", "nltk", "pytest", "pytest-datadir", "pytest-xdist", "pyyaml (>=5.3.1)", "requests-file (>=1.5.1)", "rouge-score (>=0.1.2)", "sacrebleu", "sacremoses", "scikit-learn", "scipy", "sentencepiece", "seqeval", "six (>=1.15.0,<1.16.0)", "tensorflow (>=2.3,!=2.6.0,!=2.6.1,<=2.10)", "texttable (>=1.6.3)", "tldextract (>=3.1.0)", "toml (>=0.10.1)", "torch", "transformers", "trectools", "unidecode (>=1.3.4)"]
-docs = ["s3fs"]
-evaluator = ["scipy (>=1.7.1)", "transformers"]
-quality = ["black (>=22.0,<23.0)", "flake8 (>=3.8.3)", "isort (>=5.0.0)", "pyyaml (>=5.3.1)"]
-template = ["cookiecutter", "gradio (>=3.0.0)"]
-tensorflow = ["tensorflow (>=2.2.0,!=2.6.0,!=2.6.1)"]
-tensorflow_gpu = ["tensorflow-gpu (>=2.2.0,!=2.6.0,!=2.6.1)"]
-tests = ["Werkzeug (>=1.0.1)", "absl-py", "bert-score (>=0.3.6)", "cer (>=1.2.0)", "charcut (>=1.1.1)", "jiwer", "mauve-text", "nltk", "pytest", "pytest-datadir", "pytest-xdist", "requests-file (>=1.5.1)", "rouge-score (>=0.1.2)", "sacrebleu", "sacremoses", "scikit-learn", "scipy", "sentencepiece", "seqeval", "six (>=1.15.0,<1.16.0)", "tensorflow (>=2.3,!=2.6.0,!=2.6.1,<=2.10)", "texttable (>=1.6.3)", "tldextract (>=3.1.0)", "toml (>=0.10.1)", "torch", "transformers", "trectools", "unidecode (>=1.3.4)"]
-torch = ["torch"]
-
-[[package]]
 name = "executing"
 version = "1.2.0"
 description = "Get the currently executing AST node of a frame, and other information"
@@ -1194,21 +1161,6 @@ socks = ["PySocks (>=1.5.6,!=1.5.7)"]
 use_chardet_on_py3 = ["chardet (>=3.0.2,<6)"]
 
 [[package]]
-name = "responses"
-version = "0.18.0"
-description = "A utility library for mocking out the `requests` Python library."
-category = "dev"
-optional = false
-python-versions = ">=3.7"
-
-[package.dependencies]
-requests = ">=2.0,<3.0"
-urllib3 = ">=1.25.10"
-
-[package.extras]
-tests = ["coverage (>=6.0.0)", "flake8", "mypy", "pytest (>=4.6)", "pytest-cov", "pytest-localserver", "types-mock", "types-requests"]
-
-[[package]]
 name = "rlp"
 version = "3.0.0"
 description = "A package for Recursive Length Prefix encoding and decoding"
@@ -1884,10 +1836,13 @@ python-versions = ">=3.8"
 docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "rst.linker (>=1.9)", "sphinx (>=3.5)", "sphinx-lint"]
 testing = ["big-o", "jaraco.functools", "jaraco.itertools", "more-itertools", "pytest (>=6)", "pytest-black (>=0.3.7)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-ignore-flaky", "pytest-mypy (>=0.9.1)", "pytest-ruff"]
 
+[extras]
+cli = []
+
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.9, <3.11"
-content-hash = "5b57164c35a103766d7f6cb3e8e9b294933f7860caeec07b7d6de95b14e4932d"
+content-hash = "c9af9ed43246f03bf1b101be9286b0dc32a47ea2cfb8a88c728b8b1bd7a1ac01"
 
 [metadata.files]
 aiohttp = [
@@ -2483,10 +2438,6 @@ eth-typing = [
 eth-utils = [
     {file = "eth-utils-2.2.0.tar.gz", hash = "sha256:7f1a9e10400ee332432a778c321f446abaedb8f538df550e7c9964f446f7e265"},
     {file = "eth_utils-2.2.0-py3-none-any.whl", hash = "sha256:d6e107d522f83adff31237a95bdcc329ac0819a3ac698fe43c8a56fd80813eab"},
-]
-evaluate = [
-    {file = "evaluate-0.4.0-py3-none-any.whl", hash = "sha256:4b528de0f270cdfb077ca4877035dc17584d2c4b1cbc3fdd46afc3942ed557fd"},
-    {file = "evaluate-0.4.0.tar.gz", hash = "sha256:bd6a59879be9ae13b681684e56ae3e6ea657073c4413b30335e9efa9856e4f44"},
 ]
 executing = [
     {file = "executing-1.2.0-py2.py3-none-any.whl", hash = "sha256:0314a69e37426e3608aada02473b4161d4caf5a4b244d1d0c48072b8fee7bacc"},
@@ -3350,10 +3301,6 @@ regex = [
 requests = [
     {file = "requests-2.31.0-py3-none-any.whl", hash = "sha256:58cd2187c01e70e6e26505bca751777aa9f2ee0b7f4300988b709f44e013003f"},
     {file = "requests-2.31.0.tar.gz", hash = "sha256:942c5a758f98d790eaed1a29cb6eefc7ffb0d1cf7af05c3d2791656dbd6ad1e1"},
-]
-responses = [
-    {file = "responses-0.18.0-py3-none-any.whl", hash = "sha256:15c63ad16de13ee8e7182d99c9334f64fd81f1ee79f90748d527c28f7ca9dd51"},
-    {file = "responses-0.18.0.tar.gz", hash = "sha256:380cad4c1c1dc942e5e8a8eaae0b4d4edf708f4f010db8b7bcfafad1fcd254ff"},
 ]
 rlp = [
     {file = "rlp-3.0.0-py2.py3-none-any.whl", hash = "sha256:d2a963225b3f26795c5b52310e0871df9824af56823d739511583ef459895a7d"},
