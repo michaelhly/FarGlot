@@ -1,9 +1,8 @@
 set -e
 
 SCRIPT_DIR="$(dirname "$(realpath "${BASH_SOURCE[0]}")")"
-PROJ_DIR="$SCRIPT_DIR/.."
-FARCASTER_DIR="$PROJ_DIR/.farcaster"
-GENERATED_DIR="$PROJ_DIR/src/farcaster/generated"
+FARCASTER_DIR="$../.farcaster"
+GENERATED_DIR="$SCRIPT_DIR/farcaster/generated"
 
 # https://stackoverflow.com/questions/600079/how-do-i-clone-a-subdirectory-only-of-a-git-repository/52269934#52269934
 svn export --force https://github.com/farcasterxyz/hub-monorepo/trunk/protobufs/schemas $FARCASTER_DIR/schemas
