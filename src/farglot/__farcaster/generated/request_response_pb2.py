@@ -12,10 +12,10 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
-import farcaster.generated.message_pb2 as message__pb2
-import farcaster.generated.onchain_event_pb2 as onchain__event__pb2
-import farcaster.generated.hub_event_pb2 as hub__event__pb2
-import farcaster.generated.username_proof_pb2 as username__proof__pb2
+import farglot.__farcaster.generated.message_pb2 as message__pb2
+import farglot.__farcaster.generated.onchain_event_pb2 as onchain__event__pb2
+import farglot.__farcaster.generated.hub_event_pb2 as hub__event__pb2
+import farglot.__farcaster.generated.username_proof_pb2 as username__proof__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(

@@ -1,8 +1,8 @@
-import farcaster.generated.message_pb2 as _message_pb2
-import farcaster.generated.id_registry_event_pb2 as _id_registry_event_pb2
-import farcaster.generated.name_registry_event_pb2 as _name_registry_event_pb2
-import farcaster.generated.onchain_event_pb2 as _onchain_event_pb2
-import farcaster.generated.username_proof_pb2 as _username_proof_pb2
+import farglot.__farcaster.generated.message_pb2 as _message_pb2
+import farglot.__farcaster.generated.id_registry_event_pb2 as _id_registry_event_pb2
+import farglot.__farcaster.generated.name_registry_event_pb2 as _name_registry_event_pb2
+import farglot.__farcaster.generated.onchain_event_pb2 as _onchain_event_pb2
+import farglot.__farcaster.generated.username_proof_pb2 as _username_proof_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

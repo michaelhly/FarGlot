@@ -1,5 +1,5 @@
-import farcaster.generated.message_pb2 as _message_pb2
-import farcaster.generated.id_registry_event_pb2 as _id_registry_event_pb2
+import farglot.__farcaster.generated.message_pb2 as _message_pb2
+import farglot.__farcaster.generated.id_registry_event_pb2 as _id_registry_event_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

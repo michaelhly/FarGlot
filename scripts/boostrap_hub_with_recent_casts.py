@@ -3,11 +3,15 @@ import grpc
 import requests
 from eth_account import Account
 
-from farcaster.builders import make_cast_add, make_signer_add
-from farcaster.generated.message_pb2 import CastAddBody, FarcasterNetwork, MessageData
-from farcaster.client import get_insecure_client
-from farcaster.signers import EIP712Signer, Ed25519Signer
-from farcaster.time import get_farcaster_time
+from farglot.__farcaster.builders import make_cast_add, make_signer_add
+from farglot.__farcaster.generated.message_pb2 import (
+    CastAddBody,
+    FarcasterNetwork,
+    MessageData,
+)
+from farglot.__farcaster.client import get_insecure_client
+from farglot.__farcaster.signers import EIP712Signer, Ed25519Signer
+from farglot.__farcaster.time import get_farcaster_time
 
 CAST_BATCHES = 1
 # FARCASTER CONFIGS

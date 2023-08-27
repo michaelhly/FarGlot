@@ -1,7 +1,7 @@
 from blake3 import blake3
 
-from signers import Signer, Ed25519Signer
-from generated.message_pb2 import (
+from farglot.__farcaster.signers import Signer, Ed25519Signer
+from farglot.__farcaster.generated.message_pb2 import (
     Message,
     MessageData,
     HashScheme,
