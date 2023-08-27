@@ -28,7 +28,7 @@ cli = [
     "typer",
     "grpcio",
     "protobuf",
-    "PyNaCl,
+    "PyNaCl",
     "faust-streaming-rocksdb"
 ]
 
