@@ -1,3 +1,4 @@
+from abc import ABC, abstractmethod
 from typing_extensions import Self
 from datasets import Dataset
 from typing import List, Optional, Union
@@ -17,7 +18,20 @@ from torch import nn, tensor, softmax
 from farglot.pretrained import load_model_and_tokenizer
 
 
-class BaseAnalyzer:
+class BaseAnalyzer(ABC):
+    @classmethod
+    @abstractmethod
+    def from_model_name(
+        cls, model_name: str, config: Optional[PretrainedConfig] = None
+    ) -> Self:
+        pass
+
+    @abstractmethod
+    def predict(self, inputs: List[str]) -> bytes:
+        pass
+
+
+class AnalyzerForSequenceClassification(BaseAnalyzer):
     def __init__(
         self,
         model: Union[PreTrainedModel, nn.Module],
@@ -37,8 +51,6 @@ class BaseAnalyzer:
             ),
         )
 
-
-class AnalyzerForSequenceClassification(BaseAnalyzer):
     def __tokenize(self, batch: Union[str, List[str]]) -> BatchEncoding:
         return self.tokenizer(
             batch["text"],
