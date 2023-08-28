@@ -11,11 +11,9 @@ from farglot.__farcaster.generated.request_response_pb2 import (
 from farglot.__farcaster.generated.rpc_pb2_grpc import (
     HubServiceStub,
 )
-from farglot.analyzer import (
-    AnalyzerForSequenceClassification,
-    AnalyzerForTokenClassification,
-    BaseAnalyzer,
-)
+from farglot.analyzer.base import BaseAnalyzer
+from farglot.analyzer.sequence_classification import AnalyzerForSequenceClassification
+from farglot.analyzer.token_classification import AnalyzerForTokenClassification
 
 
 class CastAnalyzer:

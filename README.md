@@ -11,7 +11,7 @@ pip install farglot
 ## Examples
 
 ```python
-from farglot.cast_analyzer import CastAnalyzer
+from farglot import CastAnalyzer
 
 sentiment_analyzer=CastAnalyzer.sequence_analzyer_from_model_name(
     hub_address="nemes.farcaster.xyz:2283",
