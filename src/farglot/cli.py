@@ -32,7 +32,7 @@ def init():
     typer.echo(f"FarGlot configs initialized at {str(FARGLOT_CONF_PATH)}")
 
 
-@app.command()
+@app.command(help="Set path to your Hub's RocksDB directory")
 def set_hub_db_path(db_path: str):
     hub_db_path = Path(db_path)
     if not hub_db_path.exists() or not hub_db_path.is_dir():
@@ -43,7 +43,7 @@ def set_hub_db_path(db_path: str):
     typer.echo(f"Hub DB path updated to {db_path}")
 
 
-@app.command()
+@app.command(help="Set path to JSON file with column headers")
 def set_columns_path(columns_path: str):
     lp = Path(columns_path)
     if not lp.exists() or lp.is_dir():
@@ -54,7 +54,7 @@ def set_columns_path(columns_path: str):
     typer.echo(f"Columns path updated to {columns_path}")
 
 
-@app.command()
+@app.command(help="Generate a new training set from your Hub")
 def new_training_set(out: Optional[str] = None):
     columns_path, db_path = __read_paths_from_conf()
     if not columns_path.exists():
