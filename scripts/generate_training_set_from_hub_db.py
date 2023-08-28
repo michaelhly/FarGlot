@@ -1,7 +1,7 @@
 import csv
 import rocksdb
 
-from farcaster.generated.message_pb2 import Message
+from farglot.__farcaster.generated.message_pb2 import Message
 
 HUBBLE_ROCKS_DB_PATH = ""
 HUBBLE_ROCKS_DB_NAME = "rocks.hub._default"

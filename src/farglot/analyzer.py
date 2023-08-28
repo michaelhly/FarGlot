@@ -1,6 +1,6 @@
 from typing_extensions import Self
 from datasets import Dataset
-from typing import Dict, List, Optional, Union
+from typing import List, Optional, Union
 from transformers import (
     AutoModelForSequenceClassification,
     AutoModelForTokenClassification,

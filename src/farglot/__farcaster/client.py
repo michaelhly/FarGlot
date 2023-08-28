@@ -1,6 +1,6 @@
 import grpc
 
-from generated.rpc_pb2_grpc import HubServiceStub
+from farglot.__farcaster.generated.rpc_pb2_grpc import HubServiceStub
 
 
 def get_insecure_client(address: str, use_async: bool = False) -> HubServiceStub:

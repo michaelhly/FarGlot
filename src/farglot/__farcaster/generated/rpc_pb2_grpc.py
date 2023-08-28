@@ -2,13 +2,13 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-import farcaster.generated.hub_event_pb2 as hub__event__pb2
-import farcaster.generated.id_registry_event_pb2 as id__registry__event__pb2
-import farcaster.generated.message_pb2 as message__pb2
-import farcaster.generated.name_registry_event_pb2 as name__registry__event__pb2
-import farcaster.generated.onchain_event_pb2 as onchain__event__pb2
-import farcaster.generated.request_response_pb2 as request__response__pb2
-import farcaster.generated.username_proof_pb2 as username__proof__pb2
+import farglot.__farcaster.generated.hub_event_pb2 as hub__event__pb2
+import farglot.__farcaster.generated.id_registry_event_pb2 as id__registry__event__pb2
+import farglot.__farcaster.generated.message_pb2 as message__pb2
+import farglot.__farcaster.generated.name_registry_event_pb2 as name__registry__event__pb2
+import farglot.__farcaster.generated.onchain_event_pb2 as onchain__event__pb2
+import farglot.__farcaster.generated.request_response_pb2 as request__response__pb2
+import farglot.__farcaster.generated.username_proof_pb2 as username__proof__pb2
 
 
 class HubServiceStub(object):

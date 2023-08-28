@@ -1,4 +1,4 @@
-import farcaster.generated.username_proof_pb2 as _username_proof_pb2
+import farglot.__farcaster.generated.username_proof_pb2 as _username_proof_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor

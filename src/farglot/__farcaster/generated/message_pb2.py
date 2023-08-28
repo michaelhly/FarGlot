@@ -12,7 +12,7 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
-import farcaster.generated.username_proof_pb2 as username__proof__pb2
+import farglot.__farcaster.generated.username_proof_pb2 as username__proof__pb2
 
 
 DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(
