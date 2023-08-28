@@ -17,8 +17,7 @@ def compute_metrics(eval_pred: EvalPrediction) -> Dict:
     predictions = np.argmax(logits, axis=-1)
     return {
         "accuracy": accuracy_score(label_ids, predictions),
-        "f1_macro": f1_score(label_ids, predictions, average="macro"),
-        "f1_micro": f1_score(label_ids, predictions, average="micro"),
+        "f1": f1_score(label_ids, predictions),
     }
 
 
