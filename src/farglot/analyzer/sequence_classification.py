@@ -1,10 +1,8 @@
-from abc import ABC, abstractmethod
+from typing import List, Optional, Union
 from typing_extensions import Self
 from datasets import Dataset
-from typing import List, Optional, Union
 from transformers import (
     AutoModelForSequenceClassification,
-    AutoModelForTokenClassification,
     BatchEncoding,
     DataCollatorWithPadding,
     PretrainedConfig,
@@ -15,20 +13,8 @@ from transformers import (
 )
 from torch import nn, tensor, softmax
 
+from farglot.analyzer.base import BaseAnalyzer
 from farglot.pretrained import load_model_and_tokenizer
-
-
-class BaseAnalyzer(ABC):
-    @classmethod
-    @abstractmethod
-    def from_model_name(
-        cls, model_name: str, config: Optional[PretrainedConfig] = None
-    ) -> Self:
-        pass
-
-    @abstractmethod
-    def predict(self, inputs: List[str]) -> bytes:
-        pass
 
 
 class AnalyzerForSequenceClassification(BaseAnalyzer):
@@ -84,19 +70,3 @@ class AnalyzerForSequenceClassification(BaseAnalyzer):
         # TODO(michael): Format probas
 
         return probas
-
-
-class AnalyzerForTokenClassification(BaseAnalyzer):
-    @classmethod
-    def from_model_name(
-        cls, model_name: str, config: Optional[PretrainedConfig] = None
-    ) -> Self:
-        model, tokenizer = load_model_and_tokenizer(
-            base_model=model_name,
-            auto_model_class=AutoModelForTokenClassification,
-            config=config,
-        )
-        return cls(model, tokenizer)
-
-    def predict(self, inputs: List[str]):
-        raise NotImplementedError
