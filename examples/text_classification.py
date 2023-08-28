@@ -1,14 +1,14 @@
 import os
 from datasets import load_dataset
 
-from examples.trainers.sentiment import sentiment_trainer
+from examples.classifiers.binary import binary_classifier
 
 CHECKPOINTS_DIR = f"{os.getcwd()}/data/checkpoints"
 
 dataset = load_dataset(
     "csv", data_files={"test": "data/test-set.csv", "train": "data/training-set.csv"}
 )
-trainer = sentiment_trainer("distilbert-base-uncased")
+trainer = binary_classifier("distilbert-base-uncased")
 
 
 # PREPROCESS DATA

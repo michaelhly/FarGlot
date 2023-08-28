@@ -9,7 +9,7 @@ from transformers import (
 from sklearn.metrics import f1_score, accuracy_score
 from farglot.pretrained import default_auto_config, load_model_and_tokenizer
 
-id2label = {0: "NEGATIVE", 1: "NEUTRAL", 2: "POSITIVE"}
+id2label = {0: "NEGATIVE", 1: "POSITIVE"}
 
 
 def compute_metrics(eval_pred: EvalPrediction) -> Dict:
@@ -22,7 +22,7 @@ def compute_metrics(eval_pred: EvalPrediction) -> Dict:
     }
 
 
-def sentiment_trainer(base_model: str) -> Trainer:
+def binary_classifier(base_model: str) -> Trainer:
     model, tokenizer = load_model_and_tokenizer(
         base_model=base_model,
         auto_model_class=AutoModelForSequenceClassification,
