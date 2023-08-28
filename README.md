@@ -32,7 +32,7 @@ sentiment_analyzer.predict_casts_by_fid(fid=2)
 pip install "farglot[cli]"
 ```
 
-### Define Training Set Columns
+### Define Training Set Classifier(s)
 
 ```json
 {
@@ -46,15 +46,15 @@ For multi-label classfication:
 ```json
 [
   {
-    "name": "column_one",
+    "name": "class_one",
     "default_value": 1 // optional
   },
   {
-    "name": "column_two",
+    "name": "class_two",
     "default_value": 2 // optional
   },
   {
-    "name": "column_three",
+    "name": "class_three",
     "default_value": 3 // optional
   }
 ]
@@ -64,7 +64,7 @@ For multi-label classfication:
 
 ```sh
 farglot init
-farglot set-columns-path /path/to/column_configs.json
+farglot set-classifers-path /path/to/class_configs.json
 farglot set-hub-db-path /path/to/.rocks/rocks.hub._default
 farglot new-training-set --out ./data/training-set.csv
 ```
